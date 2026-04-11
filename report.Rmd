@@ -46,10 +46,29 @@ Section 1: Christina
 
 ```
 
-Section 2: Emalee
+## Days to Stabilization of Patients by Site
+This section analyzes the number of days to stabilization of patients by site. 
+There were `r n_distinct(cleandata$site)` sites total. Days to stabilization ranged 
+from `r min(cleandata$days_stable)` to `r max(cleandata$days_stable[cleandata$days_stable != 999])`. 
+`r sum(cleandata$days_stable == 999)` patients were unable to stabilize due to death, 
+voluntary withdrawal, protocol violation, or other reasons.
 
-```{r, elements2}
+```{r, section2_plot, echo=FALSE, warning=FALSE}
+section2_plot <-readRDS(
+  file = here::here("output/section2_plot.rds")
+)
+section2_plot
+```
 
+The number of patients by site was not equal. `r sum(cleandata$site == 'A')` patients 
+were enrolled at site A, `r sum(cleandata$site == 'B')` at site B, and 
+`r sum(cleandata$site == 'C')` at site C. 
+
+```{r, section2_table, echo=FALSE, warning=FALSE}
+section2_table <-readRDS(
+  file = here::here("output/section2_table.rds")
+)
+section2_table
 ```
 
 Section 3: Sakshi
