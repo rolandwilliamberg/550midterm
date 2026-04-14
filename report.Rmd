@@ -50,7 +50,7 @@ saveRDS(
 
 Section 1: Christina
 
-The data in the `r arm` arm contains `r nrow(f75_interim)` patients (rows) and `r ncol(f75_interim)` variables (columns), with 31 character, 11 numeric, and 1 date variable. Patients were recruited between `r format(min(unique(f75_interim$enr_month)), "%B %Y")` and `r format(max(unique(f75_interim$enr_month)), "%B %Y")`. Missing data is displayed in the plot below, and patient characteristics are summarized in Table 1. Note that the variable tracking sickle cell disease is not included in the table because it was present in none of the patients, with no missing data. Furthermore, measurements labelled as taken at discharge were taken at death or withdrawal from the study if the patient was not discharged. 
+Missing data is displayed in the plot below, and patient characteristics are summarized in Table 1. Note that the variable tracking sickle cell disease is not included in the table because it was present in none of the patients, with no missing data. Furthermore, measurements labelled as taken at discharge were taken at death or withdrawal from the study if the patient was not discharged. 
 
 ```{r missing-data, echo=FALSE, fig.height=8, fig.width=8}
 missing_data_plot <- readRDS(

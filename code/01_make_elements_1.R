@@ -58,7 +58,7 @@ names(f75_interim_plot) <- ifelse(sapply(var_labels, is.null),
 missing_data_plot <- plot_missing(f75_interim_plot, 
                                   group_color = list(Good = "#E4B7E5", OK = "#B288C0", Bad = "#7E5A9B", Remove = "#63458A"), #coolors.com palette, colorblind friendly
                                   missing_only = TRUE, #Only show variables with any missing data
-                                  title = glue("Missing Data in {arm} Arm"), 
+                                  title = glue("Missing Data"), 
                                   ggtheme = theme_classic()) #can change to any ggplot2 theme
 
 #Save plot for report
@@ -78,7 +78,7 @@ table1 <- cleandata |> #Exclude subject ID, site (because is column), and arm (b
   modify_spanning_header(c("stat_1", "stat_2", "stat_3") ~ "**Site**") |> #Add label for site columns
   add_overall() |> #Overall column
   bold_labels() |> #Format bold labels
-  modify_caption(glue("**Table 1. Patient Characteristics For {arm} Arm**")) |> #Caption label
+  modify_caption(glue("**Table 1. Patient Characteristics**")) |> #Caption label
   as_gt() |> #Coerce to gt for following function...
   gt::tab_source_note(gt::md("*Missing data coded as 'Not recorded'*")) #Modify footnote
 
