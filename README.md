@@ -19,7 +19,7 @@ If you run into any issues with this structure or would like things done a diffe
 
 In order to generate two different versions of our report based on parameters, I have set up the `00_clean_data.R` file to filter 
 our dataset based on a config variable specified in terminal:
-- To run the standard/default version of the report, first execute `export WHICH_CONFIG="intervention"` in terminal, followed by executing `make` in terminal
+- To run the standard/default version of the report, first execute `export WHICH_CONFIG="default"` in terminal, followed by executing `make` in terminal
 - To run the intervention/customized version of the report, first execute `export WHICH_CONFIG="intervention"` in terminal, followed by executing `make`
 
 - However, as we are putting together the code for the report, you may have to run `00_clean_data.R` to filter and save 
