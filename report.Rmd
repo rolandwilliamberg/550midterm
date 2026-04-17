@@ -105,6 +105,7 @@ withdraw_plot <- readRDS(
 
 outcome_table
 withdraw_plot
+
 ```
 
 Section 4: Tyler

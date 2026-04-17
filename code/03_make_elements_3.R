@@ -23,7 +23,7 @@ saveRDS(
 
 # Bar plot of withdrawal reasons by treatment arm
 withdraw_plot <- cleandata %>%
-  filter(!is.na(withdraw2)) %>%
+  dyplr::filter(!is.na(withdraw2)) %>%
   ggplot(aes(x = withdraw2, fill = arm)) +
   geom_bar(position = "dodge") +
   labs(
