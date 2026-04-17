@@ -17,6 +17,21 @@ wt_dat <- cleandata %>%
     discharge_death = weight2
   )
 
+wt_long <- wt_dat %>%
+  pivot_longer(
+    cols = c(baseline, stabilization, discharge_death),
+    names_to = "stage",
+    values_to = "weight_kg"
+  ) %>%
+  mutate(
+    stage = factor(
+      stage,
+      levels = c("baseline", "stabilization", "discharge_death"),
+      labels = c("Baseline", "Stabilization", "Discharge/Death")
+    ),
+    arm = as.factor(arm)
+  )
+
 #  Summary table: mean weight at each stage overall and by treatment arm
 overall_weight <- wt_long %>%
   group_by(stage) %>%
