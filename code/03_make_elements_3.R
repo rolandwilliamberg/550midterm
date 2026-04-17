@@ -6,6 +6,7 @@ cleandata <- readRDS(
 
 library(gtsummary)
 library(ggplot2)
+library(dplyr)
 
 # Table of outcome frequencies and percentages by treatment group 
 outcome_table <- cleandata %>%
@@ -23,7 +24,7 @@ saveRDS(
 
 # Bar plot of withdrawal reasons by treatment arm
 withdraw_plot <- cleandata %>%
-  dpylr::filter(!is.na(withdraw2)) %>%
+  dplyr::filter(!is.na(withdraw2)) %>%
   ggplot(aes(x = withdraw2, fill = arm)) +
   geom_bar(position = "dodge") +
   labs(
