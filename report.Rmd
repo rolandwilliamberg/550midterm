@@ -72,7 +72,10 @@ section2_table
 
 Section 3: Sakshi
 
-```{r, elements3}
+This section summarizes key clinical outcomes and complications during admission, focusing on shock, impaired consciousness, severe pneumonia, diarrhoea, malaria, tuberculosis, HIV status, and reasons for withdrawal from therapy. We present a table of withdrawal outcomes by treatment arm and a bar plot showing the distribution of withdrawal reasons across arms.
+
+```{r, elements3, echo=FALSE}
+
 outcome_table <- readRDS(
   file = here::here("output/outcome_table.rds")
 )
@@ -82,6 +85,7 @@ withdraw_plot <- readRDS(
 
 outcome_table
 withdraw_plot
+
 ```
 
 Section 4: Tyler
