@@ -32,6 +32,7 @@ wt_long <- wt_dat %>%
     arm = as.factor(arm)
   )
 
+
 #  Summary table: mean weight at each stage overall and by treatment arm
 overall_weight <- wt_long %>%
   group_by(stage) %>%
