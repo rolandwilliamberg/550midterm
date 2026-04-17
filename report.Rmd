@@ -78,6 +78,23 @@ Section 3: Sakshi
 
 Section 4: Tyler
 
-```{r, elements4}
+```{r, elements4, echo=FALSE}
+
+weight_summary_table <- readRDS(
+  file = here::here("output/weight_summary_table.rds")
+)
+
+weight_change_table <- readRDS(
+  file = here::here("output/weight_change_table.rds")
+)
+
+weight_trajectory_plot <- readRDS(
+  file = here::here("output/weight_trajectory_plot.rds")
+)
+
+weight_summary_table
+weight_change_table
+weight_trajectory_plot
+
 
 ```

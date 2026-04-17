@@ -3,11 +3,10 @@
 cleandata <- readRDS(
   file = here::here("data/cleandata.rds")
 )
+
 library(tidyverse)
 
-
 #stage-specific summaries
-
 
 wt_dat <- cleandata %>%
   select(subjid, arm, weight, weight1, weight2) %>%
@@ -15,6 +14,13 @@ wt_dat <- cleandata %>%
     baseline = weight,
     stabilization = weight1,
     discharge_death = weight2
+  )
+
+wt_long <- wt_dat %>%
+  pivot_longer(
+    col = c(baseline, stabilization, discharge_death),
+    names_to="stage",
+    values_to="weight_kg"
   )
 
 #  Summary table: mean weight at each stage overall and by treatment arm
